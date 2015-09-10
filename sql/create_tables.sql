@@ -2,15 +2,15 @@
 
 CREATE TABLE Kayttaja(
     id SERIAL PRIMARY KEY -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
-    --name varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
-    --password varchar(50) NOT NULL
+    name varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
+    password varchar(50) NOT NULL
 );
 
 -- 2 erilaista Kayttajaa: yllapitaja, asiakas, miten?
 
 CREATE TABLE Laji(
     id SERIAL PRIMARY KEY
-    --name varchar(50) NOT NULL,
+    name varchar(50) NOT NULL,
     --description varchar(400) ehkä
 );
 
@@ -19,7 +19,7 @@ CREATE TABLE Laji(
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY
     --player_id INTEGER REFERENCES Laji(name)
-    --kesto INT NOT NULL
+    kesto INT NOT NULL
 );
 
 --  pvm?, klo?, kesto(min), x/x?; jos on täynnä
