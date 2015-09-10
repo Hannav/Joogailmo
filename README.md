@@ -7,7 +7,7 @@ Yleisiä linkkejä:
 * [Etusivu] (http://hvuorivi.users.cs.helsinki.fi/tsoha/)
 * [Login] (http://hvuorivi.users.cs.helsinki.fi/tsoha/login)
 * [Kalenteri] (http://hvuorivi.users.cs.helsinki.fi/tsoha/kalenteri)
-* [Omat varaukset] (http://hvuorivi.users.cs.helsinki.fi/tsoha/)
+* [Omat varaukset] (http://hvuorivi.users.cs.helsinki.fi/tsoha/omat_varaukset)
 * [typography - tekstin asettelu ja tyylittely] (http://getbootstrap.com/css/#type)
 * [tables - taulukot] (http://getbootstrap.com/css/#tables)
 * [forms - lomakkeet] (http://getbootstrap.com/css/#forms)
