@@ -1,5 +1,5 @@
 -- MIHIN MONESTA MONEEN-YHTEYS mihin tauluihin???
-
+/*
 CREATE TABLE Kayttaja(
     id SERIAL PRIMARY KEY -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
     --name varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
@@ -18,7 +18,7 @@ CREATE TABLE Laji(
 
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY
-    --/*player_id INTEGER*/ REFERENCES Laji(name)
+    --player_id INTEGER REFERENCES Laji(name)
     --kesto INT NOT NULL
 );
 
@@ -27,10 +27,10 @@ CREATE TABLE Tunti(
 CREATE TABLE Varaus(
     id SERIAL PRIMARY KEY
 );
-
+*/
 -- mitä tänne tulee? Kayttaja id, Tunti id?
 
-/* CREATE TABLE Player(
+CREATE TABLE Player(
   id SERIAL PRIMARY KEY, -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
   name varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
   password varchar(50) NOT NULL
@@ -44,4 +44,4 @@ CREATE TABLE Game(
   description varchar(400),
   published DATE,
   publisher varchar(50),
-  added DATE*/
+  added DATE
