@@ -1,32 +1,35 @@
+-- MIHIN MONESTA MONEEN-YHTEYS mihin tauluihin???
+
 CREATE TABLE Kayttaja(
     id SERIAL PRIMARY KEY, -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
     name varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
     password varchar(50) NOT NULL
 );
 
+-- 2 erilaista Kayttajaa: yllapitaja, asiakas, miten?
+
 CREATE TABLE Laji(
     id SERIAL PRIMARY KEY
     name varchar(50) NOT NULL,
-    --description varchar(400)
+    --description varchar(400) ehkä
+);
 
-/*  jooga
-    TRE
-    meditaatio
-    pranayama
-    taidetuokio */
+-- jooga, TRE, meditaatio, pranayama, taidetuokio
 
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY
     --/*player_id INTEGER*/ REFERENCES Laji(name)
+    kesto INTEGER NOT NULL
+    --INT vai INTEGER
+);
 
-/*  pvm, klo, kesto(min), x/x */
+--  pvm?, klo?, kesto(min), x/x?; jos on täynnä
 
 CREATE TABLE Varaus(
     id SERIAL PRIMARY KEY
+);
 
-/*  MIHIN MONESTA MONEEN-YHTEYS mihin? 
-    pareittain ilmoittautuminen johonkin?
-*/
+-- mitä tänne tulee? Kayttaja id, Tunti id?
 
 /* CREATE TABLE Player(
   id SERIAL PRIMARY KEY, -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
