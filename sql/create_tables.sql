@@ -7,7 +7,8 @@ CREATE TABLE Kayttaja(
 CREATE TABLE Laji(
     id SERIAL PRIMARY KEY
     name varchar(50) NOT NULL,
-    description varchar(400)
+    --description varchar(400)
+
 /*  jooga
     TRE
     meditaatio
@@ -16,7 +17,7 @@ CREATE TABLE Laji(
 
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY
-    /*player_id INTEGER*/ REFERENCES Laji(name)
+    --/*player_id INTEGER*/ REFERENCES Laji(name)
 
 /*  pvm, klo, kesto(min), x/x */
 
