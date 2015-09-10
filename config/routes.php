@@ -1,7 +1,7 @@
 <?php
 
   $routes->get('/', function() {
-    KayttajaController::login();
+    KayttajaController::home();
   });
 
   $routes->get('/login', function() {
@@ -17,5 +17,9 @@
   });
   
   $routes->get('/helloworld', function() {
+    HelloWorldController::sandbox();
+  });
+  
+   $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });

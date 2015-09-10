@@ -1,7 +1,11 @@
 <?php
-
-  class KayttajaController extends BaseController{
-
+    class KayttajaController extends BaseController{
+      
+    public static function home(){
+        // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
+        View::make('home.html');
+    }  
+      
     public static function login(){
         // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
         View::make('login.html');
