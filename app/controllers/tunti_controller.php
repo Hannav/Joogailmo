@@ -7,8 +7,13 @@
    	  echo 'Tämä on etusivu!';
     }
 
+       public static function kalenteri(){
+      // Testaa koodiasi täällä
+      View::make('kalenteri.html');
+    }
+    
     public static function sandbox(){
       // Testaa koodiasi täällä
       View::make('helloworld.html');
     }
-  }
+}

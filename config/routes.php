@@ -1,17 +1,21 @@
 <?php
 
   $routes->get('/', function() {
-    HelloWorldController::index();
+    KayttajaController::login();
   });
 
   $routes->get('/login', function() {
     KayttajaController::login();
   });
   
-  $routes->get('/varauskalenteri', function() {
-    HelloWorldController::sandbox();
+  $routes->get('/omat_varaukset', function() {
+    KayttajaController::omat_varaukset();
   });
   
-  $routes->get('/omat_varaukset', function() {
+  $routes->get('/kalenteri', function() {
+    TuntiController::kalenteri();
+  });
+  
+  $routes->get('/helloworld', function() {
     HelloWorldController::sandbox();
   });

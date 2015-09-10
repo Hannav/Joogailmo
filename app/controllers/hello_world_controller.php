@@ -7,8 +7,10 @@
    	  echo 'Tämä on etusivu!';
     }
 
+
     public static function sandbox(){
       // Testaa koodiasi täällä
       View::make('helloworld.html');
     }
-  }
+
+}
