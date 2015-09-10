@@ -19,8 +19,7 @@ CREATE TABLE Laji(
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY
     --/*player_id INTEGER*/ REFERENCES Laji(name)
-    kesto INTEGER NOT NULL
-    --INT vai INTEGER
+    --kesto INT NOT NULL
 );
 
 --  pvm?, klo?, kesto(min), x/x?; jos on täynnä
