@@ -1,0 +1,28 @@
+<!--voisiko muokkaus aueta suoraan kalenterista, rivit auki?-->
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>Muokkaa tuntia</h1>
+
+    <form>
+        <div class="form-group">
+            <label>Pvm</label>
+            <input type="text" class="form-control" value="">
+        </div>
+        <div class="form-group">
+            <label>Klo</label>
+            <input type="text" class="form-control" value="">
+        </div>
+        <div class="form-group">
+            <label>Laji</label>
+            <input type="text" class="form-control" value="">
+        </div>
+        <div class="form-group">
+            <label>Kesto</label>
+            <input type="text" class="form-control" value="">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Tallenna</button>
+        </div>
+    </form>
+{% endblock %}

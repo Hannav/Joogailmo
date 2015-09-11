@@ -16,6 +16,10 @@
     TuntiController::kalenteri();
   });
   
+  $routes->get('/muokkaa', function() {
+    TuntiController::muokkaa();
+  });
+  
   $routes->get('/helloworld', function() {
     HelloWorldController::sandbox();
   });

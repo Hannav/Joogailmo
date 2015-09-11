@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Omat varaukset</h1>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Pvm</th>
+            <th>Klo</th>
+            <th>Laji</th>
+            <th>Kesto</th>
+            <th>Varaa</th>
+        </tr>
+        <!-- Listataan-->
+        <tr>
+            <td><a href="#">maanantai 14.9.2015</a></td>
+            <td>18.00</td>
+            <td>Jooga</td>
+            <td>75 min</td>
+            <th><a class="btn btn-default btn-sm" href="#">Peru</a></th>
+        </tr>
+    </table>
 {% endblock %}
