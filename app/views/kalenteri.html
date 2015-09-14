@@ -8,16 +8,34 @@
             <th>Laji</th>
             <th>Kesto</th>
             <th>Varaa</th>
-            <th>Muokkaa</th> <!-- näkyisi vain ylläpitäjälle??-->
+            <!-- näkyisi vain ylläpitäjä-käyttäjälle: -->
+            <th>Muokkaa</th>
         </tr>
         <!-- Listataan-->
         <tr>
-            <td><a href="#">maanantai 14.9.2015</a></td>
-            <td>18.00</td>
-            <td>Jooga</td>
-            <td>75 min</td>
+            <td><a href="{{base_path}}/tunti/{{tunti.id}}">{{tunti.nimi}}</a></td>
+            <td>tunti.laji_id</td>
+            <td>tunti.aika</td>
+            <td>tunti.kesto</td>
+            <!--varaamiseen $max_varaukset-tarkistus!! jos tilaa, nappi vihreä, jos ei, punainen -->
             <th><a class="btn btn-default btn-sm" href="#">Varaa</a></th>
-            <th><a class="btn btn-default btn-sm" href="{{base_path}}/muokkaa">Muokkaa</a></th> <!-- näkyisi vain ylläpitäjälle??-->
+            <!-- näkyisi vain ylläpitäjälle & onko erillinen sivu, vai aukeaako kentät muokattaviksi, miten? -->
+            <th><a class="btn btn-default btn-sm" href="{{base_path}}/muokkaa">Muokkaa</a></th>
         </tr>
     </table>
+    
+    <!--<td>
+              {% if game.played %}
+                <label class="label label-success">pelattu
+              {% else %}
+                <label class="label label-danger">kesken
+              {% endif %}
+          </td>
+          <td>{{game.added}}</td>
+          <td><a class="btn btn-default btn-sm" href="{{base_path}}/game/{{game.id}}/edit">Muokkaa</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+    
 {% endblock %}
