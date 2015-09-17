@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+    
     <h1>Kalenteri</h1>
+    
         <table class="table table-striped table-bordered">
+    
         <tr>
             <th>Pvm</th>
             <th>Klo</th>
@@ -11,11 +14,12 @@
             <!-- näkyisi vain ylläpitäjä-käyttäjälle: -->
             <th>Muokkaa</th>
         </tr>
+        
         <!-- Listataan-->
         {% for tunti in tunnit %}
         
         <tr>
-            <!--<td><a href="{{base_path}}/tunti/{{tunti.id}}">{{tunti.nimi}}</a></td> -->
+            <!-- ??? <td><a href="{{base_path}}/tunti/{{tunti.id}}">{{tunti.nimi}}</a></td> -->
             <td>{{tunti.aika}}</td>
             <td>{{tunti.aika}}</td>
             <td>{{tunti.laji_id}}</td>
@@ -25,7 +29,9 @@
             <!-- näkyisi vain ylläpitäjälle & onko erillinen sivu, vai aukeaako kentät muokattaviksi, miten? -->
             <th><a class="btn btn-default btn-sm" href="{{base_path}}/muokkaa">Muokkaa</a></th>
         </tr>
+        
         {% endfor %}
-    </table>
+    
+        </table>
     
 {% endblock %}

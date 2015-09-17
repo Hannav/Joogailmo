@@ -2,7 +2,7 @@
 
     class Kayttaja extends BaseModel{
         
-        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!! $yllapitaja ON tai EI
+        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!! $yllapitaja boolean?
         
         public $id, $nimi, $salasana;
         
@@ -11,17 +11,12 @@
         }
         
         public static function all(){
-            // Alustetaan kysely tietokantayhteydellämme
             $query = DB::connection()->prepare('SELECT * FROM Kayttaja');
-            // Suoritetaan kysely
             $query->execute();
-            // Haetaan kyselyn tuottamat rivit
             $rows = $query->fetchAll();
             $kayttajat = array();
 
-            // Käydään kyselyn tuottamat rivit läpi
             foreach($rows as $row){
-            // Tämä on PHP:n hassu syntaksi alkion lisäämiseksi taulukkoon :)
             $kayttajat[] = new Kayttaja(array(
             'id' => $row['id'],
             'nimi' => $row['nimi'],

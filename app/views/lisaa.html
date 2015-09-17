@@ -1,31 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Lisää tunti</h1>
+  
+    <h1>Lisää tunti</h1>
 
-  <form method="post" action="{{base_path}}">
-    <div class="form-group">
-      <label>Pvm</label>
-      <input type="text" name="Pvm" class="form-control">
-    </div>
+    <form method="post" action="{{base_path}}/lisaa">
+  
+        <div class="form-group">
+            <label>Pvm</label>
+            <input type="text" name="Pvm" class="form-control">
+        </div>
 
-    <div class="form-group">
-      <label>Klo</label>
-      <input type="text" name="klo" class="form-control">
-    </div>
+        <div class="form-group">
+            <label>Klo</label>
+            <input type="text" name="klo" class="form-control">
+        </div>
 
-    <div class="form-group">
-      <label>Laji</label>
-      <input type="text" name="laji" class="form-control">
-    </div>
+        <div class="form-group">
+            <label>Laji</label>
+            <input type="text" name="laji" class="form-control">
+        </div>
 
-    
-    <div class="form-group">
-      <label>Kesto</label>
-      <input type="text" name="kesto" class="form-control">
-    </div>
+        <div class="form-group">
+            <label>Kesto</label>
+            <input type="text" name="kesto" class="form-control">
+        </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Lisää</button>
-    </div>
-  </form>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Lisää</button>
+        </div>
+  
+    </form>
+  
 {% endblock %}
