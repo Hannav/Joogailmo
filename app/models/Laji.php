@@ -1,5 +1,7 @@
 <?php
 
+    //haku myös lajeittain
+
     class Laji extends BaseModel{
 
         public $id, $nimi, $kuvaus;
@@ -10,7 +12,7 @@
         
         public static function all(){
             // Alustetaan kysely tietokantayhteydellämme
-            $query = DB::connection()->prepare('SELECT * FROM Game');
+            $query = DB::connection()->prepare('SELECT * FROM Laji');
             // Suoritetaan kysely
             $query->execute();
             // Haetaan kyselyn tuottamat rivit
@@ -31,18 +33,18 @@
         }
         
         public static function find($id){
-            $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE id = :id LIMIT 1');
+            $query = DB::connection()->prepare('SELECT * FROM Laji WHERE id = :id LIMIT 1');
             $query->execute(array('id' => $id));
             $row = $query->fetch();
 
             if($row){
-            $kayttaja = new Kayttaja(array(
+            $laji = new Laji(array(
             'id' => $row['id'],
             'nimi' => $row['nimi'],
-            'salasana' => $row['salasana'],
+            'kuvaus' => $row['kuvaus'],
             ));
 
-            return $kayttaja;
+            return $laji;
             }
 
         return null;

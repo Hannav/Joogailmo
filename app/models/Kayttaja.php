@@ -2,7 +2,7 @@
 
     class Kayttaja extends BaseModel{
         
-        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!!
+        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!! $yllapitaja ON tai EI
         
         public $id, $nimi, $salasana;
         

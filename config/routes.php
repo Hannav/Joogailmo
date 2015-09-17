@@ -16,6 +16,10 @@
     TuntiController::kalenteri();
   });
   
+  $routes->get('/lisaa', function() {
+    TuntiController::lisaa();
+  });
+  
   $routes->get('/muokkaa', function() {
     TuntiController::muokkaa();
   });

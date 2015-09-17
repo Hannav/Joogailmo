@@ -3,6 +3,8 @@
     class Tunti extends BaseModel{
         
         //miten erikseen tauluun pvm ja klo jos vain yksi 'aika'??
+        //yhdistelmätunnit: jooga + tre: tunnilla monta lajia
+        
         public $id, $laji_id, $aika, $kesto, $max_varaukset;
         
         public function __construct($attributes){
