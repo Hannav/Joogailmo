@@ -1,6 +1,5 @@
 <?php
     
-    require 'app/models/Tunti.php';
     class TuntiController extends BaseController{
 
     public static function kalenteri(){
@@ -13,8 +12,7 @@
         View::make('muokkaa.html');
     }
     
-    public static function lisaa(){
-        View::make('lisaa.html');
+    public static function luo(){
         $params = $_POST;
         $tunti = new Tunti(array(
         'aika' => $params['aika'],
@@ -24,6 +22,15 @@
     ));
         
         $tunti->save();
+        
+    }
+    
+//nimi muutettu    
+    public static function lisaaTunti(){
+        View::make('lisaa.html');
+        
+        
+        
         
         //Redirect::to('/kalenteri' . $tunti->id, array('message' => 'Tunti lisätty!'));
     }

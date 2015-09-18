@@ -7,6 +7,18 @@
     $routes->get('/login', function() {
         KayttajaController::login();
     });
+    
+    $routes->get('/lajit', function(){
+        LajiController::lajit();
+    });
+    
+    $routes->get('/lisaa_laji', function(){
+        LajiController::lisaaLaji();
+    });
+    
+    $routes->post('/lisaa_laji', function(){
+        LajiController::luoLaji();
+    });
   
     $routes->get('/omat_varaukset', function() {
         KayttajaController::omat_varaukset();
@@ -16,13 +28,13 @@
         TuntiController::kalenteri();
     });
   
-    $routes->post('/lisaa', function() {
+    $routes->get('/lisaa_tunti', function() {
         TuntiController::lisaa();
     });
 
 //kesken!!! miten
-    $routes->get('/lisaa/uusi', function() {
-        TuntiController::luo();
+    $routes->post('/lisaa_tunti', function() {
+        TuntiController::luoTunti();
     });
     
     $routes->get('/muokkaa', function() {
