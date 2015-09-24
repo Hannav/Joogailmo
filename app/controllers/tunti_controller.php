@@ -8,31 +8,38 @@
         View::make('kalenteri.html', array('tunnit' => $tunnit));
     }
     
-    public static function muokkaa(){
-        View::make('muokkaa.html');
+    public static function muokkaaTuntia(){
+        View::make('muokkaa_tuntia.html');
     }
     
-    public static function luo(){
+    public static function luoTunti(){
         $params = $_POST;
+   //     $muuttuja = lajiId($params['laji']);
         $tunti = new Tunti(array(
-        'aika' => $params['aika'],
-        'laji_id' => $params['laji_id'],
-        'kesto' => $params['kesto'],
-        'max_varaukset' => $params['max_varaukset']
-    ));
+            'pvm' => $params['pvm'],
+            'klo' => $params['klo'],
+            'laji_id' => $params['laji'],
+     //       'laji_id' => $muuttuja,
+            'kesto' => $params['kesto'],
+            'max_varaukset' => $params['max_varaukset']
+        ));
         
         $tunti->save();
         
+        //Redirect::to('/kalenteri');
+        
     }
-    
-//nimi muutettu    
+    /*
+    public static function lajiId($laji) {
+        //tietokantakysely
+        'id_selvitys' = 
+        
+    }
+  */
+    //nimi muutettu (aiemmin lisaa)
     public static function lisaaTunti(){
-        View::make('lisaa.html');
+        View::make('lisaa_tunti.html');
         
-        
-        
-        
-        //Redirect::to('/kalenteri' . $tunti->id, array('message' => 'Tunti lisätty!'));
     }
     
 }

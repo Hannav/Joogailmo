@@ -29,10 +29,9 @@
     });
   
     $routes->get('/lisaa_tunti', function() {
-        TuntiController::lisaa();
+        TuntiController::lisaaTunti();
     });
 
-//kesken!!! miten
     $routes->post('/lisaa_tunti', function() {
         TuntiController::luoTunti();
     });
@@ -44,23 +43,3 @@
     $routes->get('/hiekkalaatikko', function() {
         HelloWorldController::sandbox();
     });
-    
-/*
-
-});
-// Määritetään reitti game/:id vasta tässä, jottei se mene sekaisin reitin game/new kanssa
-  
-// Etusivu (pelien listaussivu)
-$routes->get('/', function(){
-  GameController::index();
-});
-// Pelien listaussivu
-$routes->get('/game', function(){
-  GameController::index();
-});
-
-// Pelin esittelysivu
-$routes->get('/game/:id', function($id){
-  GameController::show($id);
-});
-*/

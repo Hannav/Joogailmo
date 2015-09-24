@@ -15,7 +15,8 @@ CREATE TABLE Laji(
 CREATE TABLE Tunti(
     id SERIAL PRIMARY KEY,
     laji_id INTEGER REFERENCES Laji(id),
-    aika TIMESTAMP,
+    pvm DATE,
+    klo INTEGER NOT NULL,
     kesto INTEGER NOT NULL,
     max_varaukset INTEGER NOT NULL
 );
