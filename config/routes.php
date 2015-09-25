@@ -36,8 +36,8 @@
         TuntiController::luoTunti();
     });
     
-    $routes->get('/muokkaa', function() {
-        TuntiController::muokkaa();
+    $routes->get('/muokkaa_tuntia', function() {
+        TuntiController::muokkaaTuntia();
     });
     
     $routes->get('/hiekkalaatikko', function() {

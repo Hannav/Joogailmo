@@ -1,5 +1,7 @@
 <?php
     
+    //require 'app/models/Tunti.php'; ??
+
     class TuntiController extends BaseController{
 
     public static function kalenteri(){

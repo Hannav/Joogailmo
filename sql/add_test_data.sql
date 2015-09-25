@@ -3,14 +3,14 @@ INSERT INTO Kayttaja (nimi, salasana) VALUES ('Hanna', 'Hanna123');
 INSERT INTO Kayttaja (nimi, salasana) VALUES ('Katja', 'Katja123');
 
 -- Laji-taulun testidata
-INSERT INTO Laji (nimi, kuvaus) VALUES ('jooga', 'asanaharjoitus');
+INSERT INTO Laji (nimi, kuvaus) VALUES ('Jooga', 'Asanaharjoitus');
 INSERT INTO Laji (nimi, kuvaus) VALUES ('TRE', 'Tension Releasing Exercises');
-INSERT INTO Laji (nimi, kuvaus) VALUES ('taidetuokio', 'Kokeillaan kaikkea. Piirrä vaikka marsu!');
+INSERT INTO Laji (nimi, kuvaus) VALUES ('Taidetuokio', 'Kokeillaan kaikkea. Piirrä vaikka marsu!');
 
 -- Tunti-taulun testidata, tämän pitää vielä viitata Lajiin...
-INSERT INTO Tunti (laji_id, kesto, aika, max_varaukset) VALUES (1, '60', NOW(), 4);
-INSERT INTO Tunti (laji_id, kesto, aika, max_varaukset) VALUES (2, '90', NOW(), 6);
-INSERT INTO Tunti (laji_id, kesto, aika, max_varaukset) VALUES (3, '120', NOW(), 8);
+INSERT INTO Tunti (laji_id, pvm, klo, kesto, max_varaukset) VALUES (1, '2015-09-25', '1800', '60', 4);
+INSERT INTO Tunti (laji_id, pvm, klo, kesto, max_varaukset) VALUES (2, '2015-09-25', '1915', '90', 6);
+INSERT INTO Tunti (laji_id, pvm, klo, kesto, max_varaukset) VALUES (3, '2015-09-26', '1100', '120', 8);
 
 -- Varaus-taulun testidata
 INSERT INTO Varaus (kayttaja_id, tunti_id) VALUES (2,1);

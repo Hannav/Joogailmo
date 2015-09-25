@@ -1,5 +1,7 @@
 <?php
 
+    //require 'app/models/Kayttaja.php'; ??
+
     class KayttajaController extends BaseController{
       
     public static function home(){

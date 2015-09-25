@@ -1,17 +1,19 @@
 <?php
 
     class Tunti extends BaseModel{
-        
-        //miten erikseen tauluun pvm ja klo jos vain yksi 'aika'??
+
         //yhdistelmätunnit: jooga + tre: tunnilla monta lajia, poiketen alkup. suunnitelmasta
         
         public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset;
         
         public function __construct($attributes){
-        parent::__construct($attributes);
+        
+            parent::__construct($attributes);
+        
         }
         
         public static function all(){
+            
             $query = DB::connection()->prepare('SELECT * FROM Tunti');
             $query->execute();
             $rows = $query->fetchAll();
@@ -19,20 +21,18 @@
         
 
             foreach($rows as $row){
-            $tunnit[] = new Tunti(array(
-            'id' => $row['id'],
-            'laji_id' => $row['laji_id'],
-            'pvm' => $row['pvm'],
-            'klo' => $row['klo'],
-            'kesto' => $row['kesto'],
-            'max_varaukset' => $row['max_varaukset'],
-            ));
+                $tunnit[] = new Tunti(array(
+                    'id' => $row['id'],
+                    'laji_id' => $row['laji_id'],
+                    'pvm' => $row['pvm'],
+                    'klo' => $row['klo'],
+                    'kesto' => $row['kesto'],
+                    'max_varaukset' => $row['max_varaukset'],
+                ));
             }
 
         return $tunnit;
         }
-        
-        
 
         public static function find($id){
             $query = DB::connection()->prepare('SELECT * FROM Tunti WHERE id = :id LIMIT 1');

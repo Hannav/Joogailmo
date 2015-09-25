@@ -1,5 +1,7 @@
 <?php
     
+    //require 'app/models/Laji.php'; ??
+
     class LajiController extends BaseController{
 
         public static function lajit(){
@@ -10,8 +12,8 @@
         public function luoLaji() {
             $params = $_POST;
             $laji = new Laji(array(
-            'nimi' => $params['nimi'],
-            'kuvaus' => $params['kuvaus'],
+                'nimi' => $params['nimi'],
+                'kuvaus' => $params['kuvaus'],
             ));
         
             $laji->save();

@@ -17,11 +17,11 @@
             $lajit = array();
 
             foreach($rows as $row){
-            $lajit[] = new Laji(array(
-            'id' => $row['id'],
-            'nimi' => $row['nimi'],
-            'kuvaus' => $row['kuvaus'],
-            ));
+                $lajit[] = new Laji(array(
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'kuvaus' => $row['kuvaus'],
+                ));
             }
 
         return $lajit;
@@ -33,10 +33,10 @@
             $row = $query->fetch();
 
             if($row){
-            $laji = new Laji(array(
-            'id' => $row['id'],
-            'nimi' => $row['nimi'],
-            'kuvaus' => $row['kuvaus'],
+                $laji = new Laji(array(
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'kuvaus' => $row['kuvaus'],
             ));
 
             return $laji;
