@@ -8,6 +8,10 @@
         KayttajaController::login();
     });
     
+    $routes->post('/login', function() {
+        KayttajaController::handle_login();
+    });
+    
     $routes->get('/lajit', function(){
         LajiController::lajit();
     });
