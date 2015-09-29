@@ -44,5 +44,18 @@
 
         return null;
         }
-  
+ 
+        public static function authenticate($nimi, $salasana){
+            
+            $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE nimi = :nimi AND salasana = :salasana LIMIT 1', array('nimi' => $nimi, 'salasana' => $salasana));
+            $query->execute();
+            $row = $query->fetch();
+            if($row){
+                // Käyttäjä löytyi, palautetaan löytynyt käyttäjä oliona
+                return 'Käyttäjä löytyi!';
+            }else{
+                // Käyttäjää ei löytynyt, palautetaan null
+                return null;
+            }
+        }
 }

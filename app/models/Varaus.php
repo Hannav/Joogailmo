@@ -17,7 +17,7 @@
             foreach($rows as $row){
             $varaukset[] = new Varaus(array(
             'id' => $row['id'],
-            'kayttaja_id' => $row['kayttaja_id'],
+            'kayttaja_id' => $row['kayttaja_id'], //user_logged_in_id??
             'tunti_id' => $row['tunti_id'],
             ));
             }

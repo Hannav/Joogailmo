@@ -1,7 +1,6 @@
 <?php
     
-    //require 'app/models/Laji.php'; ??
-
+    require 'app/models/Laji.php';
     class LajiController extends BaseController{
 
         public static function lajit(){
