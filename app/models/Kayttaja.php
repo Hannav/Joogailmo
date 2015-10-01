@@ -2,7 +2,7 @@
 
     class Kayttaja extends BaseModel{
         
-        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!! $yllapitaja boolean?
+        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!!
         
         public $id, $nimi, $salasana;
         
@@ -46,12 +46,11 @@
         }
  
         public static function authenticate($nimi, $salasana){
-            
-            $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE nimi = :nimi AND salasana = :salasana LIMIT 1', array('nimi' => $nimi, 'salasana' => $salasana));
-            $query->execute();
+            $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE nimi = :nimi AND salasana = :salasana LIMIT 1');
+            $query->execute(array('nimi' => $nimi, 'salasana' => $salasana));
             $row = $query->fetch();
             if($row){
-                // Käyttäjä löytyi, palautetaan löytynyt käyttäjä oliona
+                // Käyttäjä löytyi, palautetaan löytynyt käyttäjä oliona sitten joskus
                 return 'Käyttäjä löytyi!';
             }else{
                 // Käyttäjää ei löytynyt, palautetaan null

@@ -7,7 +7,7 @@
         if(isset($_SESSION['kayttaja'])){
         $kayttaja_id = $_SESSION['kayttaja'];
         // Pyydetään User-mallilta käyttäjä session mukaisella id:llä
-        $kayttaja = User::find($kayttaja_id);
+        $kayttaja = Kayttaja::find($kayttaja_id);
 
         return $kayttaja;
     }

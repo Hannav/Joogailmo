@@ -17,8 +17,8 @@
         $kayttaja = Kayttaja::authenticate($params['nimi'], $params['salasana']);
         
         //??
-        if(!kayttaja){
-            View::make('kayttaja/login.html', array('error' => 'Väärä käyttäjätunnus tai salasana', 'nimi' => $params['nimi']));
+        if(!$kayttaja){
+            View::make('kalenteri.html', array('error' => 'Väärä käyttäjätunnus tai salasana', 'nimi' => $params['nimi']));
         }else{
             $_SESSION['kayttaja'] = $kayttaja->id;
             
