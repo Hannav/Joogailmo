@@ -2,7 +2,8 @@
 
     class Kayttaja extends BaseModel{
         
-        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas!!
+        //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas: $yllapitaja!!
+        //käyttäjän luominen!!
         
         public $id, $nimi, $salasana;
         
@@ -18,9 +19,10 @@
 
             foreach($rows as $row){
             $kayttajat[] = new Kayttaja(array(
-            'id' => $row['id'],
-            'nimi' => $row['nimi'],
-            'salasana' => $row['salasana'],
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'salasana' => $row['salasana'],
+                //'yllapitaja' => $row[yllapitaja],
             ));
             }
 
@@ -34,9 +36,10 @@
 
             if($row){
             $kayttaja = new Kayttaja(array(
-            'id' => $row['id'],
-            'nimi' => $row['nimi'],
-            'salasana' => $row['salasana'],
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'salasana' => $row['salasana'],
+                //'yllapitaja' => $row[yllapitaja],
             ));
 
             return $kayttaja;
@@ -49,12 +52,19 @@
             $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE nimi = :nimi AND salasana = :salasana LIMIT 1');
             $query->execute(array('nimi' => $nimi, 'salasana' => $salasana));
             $row = $query->fetch();
+            //Kint::dump($row);
             if($row){
-                // Käyttäjä löytyi, palautetaan löytynyt käyttäjä oliona sitten joskus
-                return 'Käyttäjä löytyi!';
+                return  $kayttaja = new Kayttaja(array(
+                        'id' => $row['id'],
+                        'nimi' => $row['nimi'],
+                        'salasana' => $row['salasana'],
+                        //'yllapitaja' => $row['yllapitaja'],
+                ));
             }else{
                 // Käyttäjää ei löytynyt, palautetaan null
                 return null;
             }
         }
 }
+
+//(array('nimi' => $nimi, 'salasana' => $salasana));

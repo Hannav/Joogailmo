@@ -4,12 +4,12 @@
 
         //yhdistelmätunnit: jooga + tre: tunnilla monta lajia, poiketen alkup. suunnitelmasta
         
-        public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset;
+        public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset, $validators;
         
         public function __construct($attributes){
         
             parent::__construct($attributes);
-        
+            $this->validators = array('validoi_pvm', 'validoi_klo', 'validoi_kesto', 'validoi_max_varaukset');
         }
         
         public static function all(){

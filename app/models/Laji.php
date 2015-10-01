@@ -4,10 +4,11 @@
 
     class Laji extends BaseModel{
 
-        public $id, $nimi, $kuvaus;
+        public $id, $nimi, $kuvaus, $validators;
         
         public function __construct($attributes){
             parent::__construct($attributes);
+            $this->validators = array('validoi_nimi', 'validoi_kuvaus');
         }
         
         public static function all(){
@@ -46,14 +47,9 @@
         }
 
         public function save(){
-        
-            // Lisätään RETURNING id tietokantakyselymme loppuun, niin saamme lisätyn rivin id-sarakkeen arvon
             $query = DB::connection()->prepare('INSERT INTO Laji (nimi, kuvaus) VALUES (:nimi, :kuvaus) RETURNING id');
-            // Muistathan, että olion attribuuttiin pääse syntaksilla $this->attribuutin_nimi
             $query->execute(array('nimi' => $this->nimi, 'kuvaus' => $this->kuvaus));
-            // Haetaan kyselyn tuottama rivi, joka sisältää lisätyn rivin id-sarakkeen arvon
             $row = $query->fetch();
-            // Asetetaan lisätyn rivin id-sarakkeen arvo oliomme id-attribuutin arvoksi
             $this->id = $row['id'];
             
             /*Kint::trace();
@@ -61,4 +57,15 @@
         
         }
         
+        public function validate_name(){
+            $errors = array();
+            if($this->nimi == '' || $this->nimi == null){
+                $errors[] = 'Nimi ei saa olla tyhjä!';
+            }
+            if(strlen($this->nimi) < 3){
+                $errors[] = 'Nimen pituuden tulee olla vähintään kolme merkkiä!';
+            }
+
+            return $errors;
+        }
 }

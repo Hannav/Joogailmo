@@ -25,6 +25,8 @@
             'max_varaukset' => $params['max_varaukset']
         ));
         
+        $errors = array_merge($errors, $validator_errors);
+        
         $tunti->save();
         
         //Redirect::to('/kalenteri');

@@ -22,7 +22,7 @@
         }else{
             $_SESSION['kayttaja'] = $kayttaja->id;
             
-            //Redirect::to('/', array('message' => 'Tervetuloa' . $kayttaja->nimi . '!'));
+            Redirect::to('/kalenteri');
         }
     }
 
