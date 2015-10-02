@@ -3,14 +3,23 @@
     class Kayttaja extends BaseModel{
         
         //Tee 2 erilaista käyttäjää: ylläpitäjä ja asiakas: $yllapitaja!!
-        //käyttäjän luominen!!
+        //käyttäjän luominen!! käyttäjän tietojen muokkaus, käyttäjän poistaminen
+        //$sposti?? -> käyttäjätunnus?
+        //Yp luo vai rekistetöidytäänkö?
         
         public $id, $nimi, $salasana;
         
         public function __construct($attributes){
-        parent::__construct($attributes);
+            parent::__construct($attributes);
+            $this->validators = array('validoi_nimi', 'validoi_salasana');
         }
         
+        public function validaattorit(){
+            foreach($rows as $row){
+            }
+        }
+
+
         public static function all(){
             $query = DB::connection()->prepare('SELECT * FROM Kayttaja');
             $query->execute();
