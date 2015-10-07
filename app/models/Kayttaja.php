@@ -74,6 +74,10 @@
                 return null;
             }
         }
+        
+        /* static?
+         public function destroy(){
+             //...
+         }
+         */
 }
-
-//(array('nimi' => $nimi, 'salasana' => $salasana));

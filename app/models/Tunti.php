@@ -5,8 +5,9 @@
         //yhdistelmätunnit: jooga + tre: tunnilla monta lajia, poiketen alkup. suunnitelmasta
         //käyttöliittymässä: valikko jossa listattuna olemassa olevat lajit eli ei tarvitse kirjoittaa
         //oikein, muuta tiedot syötettäviä
+        //$validators base modelissa
         
-        public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset, $validators;
+        public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset;
         
         public function __construct($attributes){
         
@@ -38,17 +39,18 @@
 
         public static function find($id){
             $query = DB::connection()->prepare('SELECT * FROM Tunti WHERE id = :id LIMIT 1');
+            //en tajuu mikä tää on:
             $query->execute(array('id' => $id));
             $row = $query->fetch();
 
             if($row){
             $tunti = new Tunti(array(
-            'id' => $row['id'],
-            'pvm' => $row['pvm'],
-            'klo' => $row['klo'],
-            'laji_id' => $row['laji_id'],   
-            'kesto' => $row['kesto'],
-            'max_varaukset' => $row['max_varaukset'],
+                'id' => $row['id'],
+                'pvm' => $row['pvm'],
+                'klo' => $row['klo'],
+                'laji_id' => $row['laji_id'],   
+                'kesto' => $row['kesto'],
+                'max_varaukset' => $row['max_varaukset'],
             ));
 
             return $tunti;
@@ -68,5 +70,11 @@
             Kint::dump($row);*/
         
         }
+        
+        /* static?
+         public function destroy(){
+             //...
+         }
+         */
 
 }

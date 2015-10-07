@@ -68,4 +68,11 @@
 
             return $errors;
         }
+        
+        /* static?
+         * 
+         public function destroy(){
+             //...
+         }
+         */
 }

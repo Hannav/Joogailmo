@@ -47,3 +47,22 @@
     $routes->get('/hiekkalaatikko', function() {
         HelloWorldController::sandbox();
     });
+    
+    /*
+    
+    $routes->get('/game/:id/edit', function($id){
+    Pelin muokkauslomakkeen esittäminen
+    TuntiController::edit($id);
+    });
+  
+    $routes->post('/game/:id/edit', function($id){
+    // Pelin muokkaaminen
+    TuntiController::update($id);
+    });
+
+    $routes->post('/game/:id/destroy', function($id){
+    // Pelin poisto
+    TuntiController::destroy($id);
+    });
+    
+    */

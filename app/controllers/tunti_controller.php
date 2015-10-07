@@ -45,4 +45,43 @@
         
     }
     
+    public static function edit($id){
+        $game = Game::find($id);
+        View::make('game/edit.html', array('attributes' => $game));
+    }
+
+    // Pelin muokkaaminen (lomakkeen käsittely)
+    public static function update($id){
+        $params = $_POST;
+
+        $attributes = array(
+            'id' => $id,
+            'name' => $params['name'],
+            'played' => $params['played'],
+            'published' => $params['published'],
+            'description' => $params['description']
+        );
+
+        // Alustetaan Game-olio käyttäjän syöttämillä tiedoilla
+        $game = new Game($attributes);
+        $errors = $game->errors();
+
+        if(count($errors) > 0){
+            View::make('game/edit.html', array('errors' => $errors, 'attributes' => $attributes));
+        }else{
+            // Kutsutaan alustetun olion update-metodia, joka päivittää pelin tiedot tietokannassa
+            $game->update();
+
+        //Redirect::to('/game/' . $game->id, array('message' => 'Peliä on muokattu onnistuneesti!'));
+        }
+      }
+
+    // Pelin poistaminen
+    public static function destroy($id){
+        $tunti = new Tunti(array('id' => $id));
+        $tunti->destroy();
+
+        //Redirect::to('/game', array('message' => 'Peli on poistettu onnistuneesti!'));
+  }
+    
 }

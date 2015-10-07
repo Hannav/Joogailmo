@@ -1,5 +1,6 @@
 <?php
     
+    //Lajia ei tarvitse muokata, ainoastaan luoda, poistaa; Tuntia ja Käyttäjää luoda, muokata, poistaa
     require 'app/models/Laji.php';
     class LajiController extends BaseController{
 
@@ -26,10 +27,9 @@
         
         /*
         public static function destroy($id){
-            // Alustetaan Game-olio annetulla id:llä
-            $game = new Game(array('id' => $id));
-            // Kutsutaan Game-malliluokan metodia destroy, joka poistaa pelin sen id:llä
-            $game->destroy();
+            $laji = new Laji(array('id' => $id));
+            // Kutsutaan Laji-malliluokan metodia destroy, joka poistaa pelin sen id:llä
+            $laji->destroy();
 
             // Ohjataan käyttäjä pelien listaussivulle ilmoituksen kera
             Redirect::to('/game', array('message' => 'Peli on poistettu onnistuneesti!'));
