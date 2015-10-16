@@ -26,6 +26,12 @@
         }
     }
 
+    public static function logout(){
+        $_SESSION['kayttaja'] = null;
+        echo'olet kirjautunut ulos';
+        //Redirect::to('/login', array('message' => 'Olet kirjautunut ulos!'));
+    }
+    
     public static function omat_varaukset(){
         View::make('omat_varaukset.html');
     }

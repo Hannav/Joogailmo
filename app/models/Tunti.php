@@ -2,10 +2,11 @@
 
     class Tunti extends BaseModel{
 
-        //yhdistelmätunnit: jooga + tre: tunnilla monta lajia, poiketen alkup. suunnitelmasta
+        //yhdistelmätunnit mahdollisia: jooga + tre: tunnilla monta lajia, poiketen alkup. suunnitelmasta
         //käyttöliittymässä: valikko jossa listattuna olemassa olevat lajit eli ei tarvitse kirjoittaa
         //oikein, muuta tiedot syötettäviä
         //$validators base modelissa
+        //$osallistujat !! pitää näkyä ylläpitäjälle
         
         public $id, $laji_id, $pvm, $klo, $kesto, $max_varaukset;
         

@@ -13,8 +13,17 @@
         </div>
         <div class="form-group">
             <label>Laji</label>
+            <select class="form-control" name="laji">
+                {% for laji in lajit %}
+                    <option value="{{laji.id}}">{{laji.nimi}}</option>
+                {% endfor %}
+            </select>
+        </div>
+<!--    <div class="form-group">
+            <label>Laji</label>
             <input type="text" class="form-control" value="">
         </div>
+-->
         <div class="form-group">
             <label>Kesto</label>
             <input type="text" class="form-control" value="">

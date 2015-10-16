@@ -1,6 +1,8 @@
 <?php
 
     //haku myös lajeittain
+    //$max_varaukset_oletus koska yleensä toistuva, samassa tilassa, lisaa_tunti laji-pudotusvalikosta
+    //täyttää lomakkeen $max_varaukset_oletus mukaisesti?
 
     class Laji extends BaseModel{
 

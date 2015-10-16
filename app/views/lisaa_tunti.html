@@ -6,6 +6,15 @@
     <form method="post" action="{{base_path}}/lisaa_tunti">
   
         <div class="form-group">
+            <label>Laji</label>
+            <select class="form-control" name="laji">
+                {% for laji in lajit %}
+                    <option value="{{laji.id}}">{{laji.nimi}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
             <label>Pvm</label>
             <input type="text" name="pvm" class="form-control">
         </div>
@@ -14,17 +23,19 @@
             <label>Klo</label>
             <input type="text" name="klo" class="form-control">
         </div>
-
+<!--
         <div class="form-group">
             <label>Laji</label>
             <input type="text" name="laji" class="form-control">
         </div>
-
+-->
         <div class="form-group">
             <label>Kesto</label>
             <input type="text" name="kesto" class="form-control">
         </div>
-        
+
+<!-- Esitäyttää oletuksen mukaisesti, voi muuttaa manuaalisesti? -->
+
         <div class="form-group">
             <label>Max. varaukset</label>
             <input type="text" name="max_varaukset" class="form-control">

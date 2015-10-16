@@ -13,13 +13,12 @@
             parent::__construct($attributes);
             $this->validators = array('validoi_nimi', 'validoi_salasana');
         }
-        
+/*        
         public function validaattorit(){
             foreach($rows as $row){
             }
         }
-
-
+*/
         public static function all(){
             $query = DB::connection()->prepare('SELECT * FROM Kayttaja');
             $query->execute();

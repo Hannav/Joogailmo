@@ -5,6 +5,7 @@
     class LajiController extends BaseController{
 
         public static function lajit(){
+            self::check_logged_in();
             $lajit = Laji::all();
             View::make('lajit.html', array('lajit' => $lajit));
         }
