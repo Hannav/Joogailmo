@@ -24,7 +24,13 @@
             <td>{{tunti.klo}}</td>
             <td>{{tunti.laji_id}}</td>
             <td>{{tunti.kesto}}</td>
-            <!-- varaamiseen $max_varaukset-tarkistus: jos tilaa, nappi vihreä, jos ei, punainen ja lukee "Täynnä" -->
+            <!-- varaamiseen $max_varaukset-tarkistus: jos tilaa, nappi vihreä:
+            <button type="button" class="btn btn-success">Varaa</button>
+            jos ei, valkoinen? pseudonappi ja lukee "Täynnä":
+            <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Täynnä</button>
+            jos on kirjautuneella käyttäjällä jo varaus kys. tunnille, peruminen:
+            <button type="button" class="btn btn-warning">Peru</button>
+            -->
             <th><a class="btn btn-default btn-sm" href="#">Varaa</a></th>
             <!-- näkyisi vain ylläpitäjälle & onko erillinen sivu, vai aukeaako kentät muokattaviksi, miten? -->
             <th><a class="btn btn-default btn-sm" href="{{base_path}}/muokkaa_tuntia">Muokkaa</a></th>
