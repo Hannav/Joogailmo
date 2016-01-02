@@ -33,7 +33,13 @@
     }
     
     public static function omat_varaukset(){
-        View::make('omat_varaukset.html');
+        $user = self::get_user_logged_in();
+        if(!$user){
+            return null;
+        }
+        $user_id = $user->id;
+        $varaukset = Varaus::find_by_user($user_id);
+        View::make('omat_varaukset.html',  array('varaukset' => $varaukset));
     }
     
   }

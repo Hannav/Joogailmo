@@ -24,9 +24,28 @@
 
         return $varaukset;
         }
+
+        public static function find_by_user($id){
+            $query = DB::connection()->prepare('SELECT * FROM Varaus WHERE kayttaja_id = :id');
+            $query->execute(array('id' => $id));
+            $rows = $query->fetch();
+
+            $varaukset = array();
         
+
+            foreach($rows as $row){
+                $varaukset[] = new Varaus(array(
+                     'id' => $row['id'],
+                     'kayttaja_id' => $row['kayttaja_id'],
+                     'tunti_id' => $row['tunti_id'],
+                ));
+            }
+
+            return $varaukset;
+        }
+
         public static function find($id){
-            $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE id = :id LIMIT 1');
+            $query = DB::connection()->prepare('SELECT * FROM Varaus WHERE id = :id LIMIT 1');
             $query->execute(array('id' => $id));
             $row = $query->fetch();
 
